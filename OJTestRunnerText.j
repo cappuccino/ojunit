@@ -36,19 +36,13 @@ CPLogRegister(CPLogPrint);
     return nil;
 }
 
-- (void)startWithArguments:(CPArray)arguments
+- (void)startWithArguments:(CPArray)args
 {
-    var testCase = "",
-        wait = NO;
+    var testCaseFile = args.shift();
     
-    for (var i = 0; i < arguments.length; i++)
-    {
-        testCaseFile = args[i]
-    }
+    if (!testCaseFile)
+        return;
 
-    if (testCaseFile == "")
-        [CPException raise:"" reason:"Usage: TestRunner testCaseName, where name is the name of the TestCase class"];
-    
     var matches = testCaseFile.match(/([^\/]+)\.j$/)
     print(matches[1]);
     var testCaseClass = matches[1];
@@ -57,6 +51,9 @@ CPLogRegister(CPLogPrint);
         var suite = [self getTest:testCaseClass];
 
         [self run:suite];
+        
+        // run the next test when this is done
+        [self startWithArguments:args];
     });
 }
 
