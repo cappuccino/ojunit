@@ -162,5 +162,10 @@ AssertionFailedError = "AssertionFailedError";
     [self fail:((message ? message+" " : "")+"expected:<"+expected+"> but was:<"+actual+">")];
 }
 
+- (CPString)description
+{
+    return _selector;
+}
+
 @end
 
