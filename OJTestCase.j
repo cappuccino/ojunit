@@ -164,7 +164,7 @@ AssertionFailedError = "AssertionFailedError";
 
 - (CPString)description
 {
-    return _selector;
+    return "[" + [self className] + " " + _selector + "]";
 }
 
 @end
