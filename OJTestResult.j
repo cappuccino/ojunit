@@ -1,6 +1,6 @@
-import <Foundation/Foundation.j>
+@import <Foundation/Foundation.j>
 
-import "OJTestFailure.j"
+@import "OJTestFailure.j"
 
 @implementation OJTestResult : CPObject
 {

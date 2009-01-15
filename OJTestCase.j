@@ -1,6 +1,6 @@
-import <Foundation/Foundation.j>
+@import <Foundation/Foundation.j>
 
-import "OJTestResult.j"
+@import "OJTestResult.j"
 
 AssertionFailedError = "AssertionFailedError";
 

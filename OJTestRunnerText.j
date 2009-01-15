@@ -1,10 +1,10 @@
-import <Foundation/Foundation.j>
+@import <Foundation/Foundation.j>
 
-import "OJTestCase.j"
-import "OJTestSuite.j"
-import "OJTestResult.j"
+@import "OJTestCase.j"
+@import "OJTestSuite.j"
+@import "OJTestResult.j"
 
-import "OJTestListenerText.j"
+@import "OJTestListenerText.j"
 
 CPLogRegister(CPLogPrint);
 
