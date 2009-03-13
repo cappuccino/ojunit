@@ -95,8 +95,8 @@ AssertionFailedError = "AssertionFailedError";
 }
 - (void)assert:(id)expected equals:(id)actual message:(CPString)message
 {
-	if (expected !== actual && ![expected isEqual:actual])
-	    [self failNotEqual:expected actual:actual message:message];
+    if (expected !== actual && ![expected isEqual:actual])
+        [self failNotEqual:expected actual:actual message:message];
 }
 
 - (void)assert:(id)expected same:(id)actual
@@ -105,8 +105,8 @@ AssertionFailedError = "AssertionFailedError";
 }
 - (void)assert:(id)expected same:(id)actual message:(CPString)message
 {
-	if (expected === actual)
-	    [self failSame:expected actual:actual message:message];
+    if (expected !== actual)
+        [self failSame:expected actual:actual message:message];
 }
 
 - (void)assert:(id)expected notSame:(id)actual
@@ -115,8 +115,8 @@ AssertionFailedError = "AssertionFailedError";
 }
 - (void)assert:(id)expected notSame:(id)actual message:(CPString)message
 {
-	if (expected !== actual)
-		[self failNotSame:expected actual:actual message:message];
+    if (expected === actual)
+        [self failNotSame:expected actual:actual message:message];
 }
 
 - (void)assertNull:(id)object
@@ -125,7 +125,7 @@ AssertionFailedError = "AssertionFailedError";
 }
 - (void)assertNull:(id)object message:(CPString)message
 {
-	[self assertTrue:(object === null) message:message];
+    [self assertTrue:(object === null) message:message];
 }
 
 - (void)assertNotNull:(id)object
@@ -134,7 +134,7 @@ AssertionFailedError = "AssertionFailedError";
 }
 - (void)assertNotNull:(id)object message:(CPString)message
 {
-	[self assertTrue:(object !== null) message:message];
+    [self assertTrue:(object !== null) message:message];
 }
 
 - (void)fail
