@@ -6,7 +6,7 @@
 
 @import "OJTestListenerText.j"
 
-CPLogRegister(CPLogPrint);
+CPLogRegister(CPLogPrint, "warn");
 
 @implementation OJTestRunnerText : CPObject
 {
@@ -41,7 +41,10 @@ CPLogRegister(CPLogPrint);
     var testCaseFile = args.shift();
     
     if (!testCaseFile)
+    {
+        [self report];
         return;
+    }
 
     var matches = testCaseFile.match(/([^\/]+)\.j$/)
     print(matches[1]);
@@ -81,6 +84,16 @@ CPLogRegister(CPLogPrint);
 + (void)runClass:(Class)aClass
 {
     [self runTest:[[OJTestSuite alloc] initWithClass:aClass]];
+}
+
+- (void)report
+{
+    var totalErrors = [[_listener errors] count] + [[_listener failures] count];
+
+    if (!totalErrors)
+        return CPLog.info("End of all tests.");
+
+    CPLog.fatal("Test suite failed with "+[[_listener errors] count]+" errors and "+[[_listener failures] count]+" failures.");
 }
 
 @end
