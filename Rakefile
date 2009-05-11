@@ -21,7 +21,8 @@ ObjectiveJ::BundleTask.new(:ojtest) do |t|
     t.sources       = FileList['*.j']
     t.license       = ObjectiveJ::License::LGPL_v2_1
     t.build_path    = $BUILD_PATH
-    t.flag          = 'DEBUG' if $CONFIGURATION == 'Debug'
+    t.flag          = '-DDEBUG' if $CONFIGURATION == 'Debug'
+    t.flag          = '-O' if $CONFIGURATION == 'Release'
 end
 
 #executable in environment directory
