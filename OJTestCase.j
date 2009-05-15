@@ -69,11 +69,11 @@ AssertionFailedError = "AssertionFailedError";
     return 1;
 }
 
-
 - (void)assertTrue:(BOOL)condition
 {
     [self assertTrue:condition message:"expected YES but got NO"];
 }
+
 - (void)assertTrue:(BOOL)condition message:(CPString)message
 {
     if (!condition)
@@ -82,8 +82,9 @@ AssertionFailedError = "AssertionFailedError";
 
 - (void)assertFalse:(BOOL)condition
 {
-    [self assertFalse:condition message:"expecteed NO but gut YES"];
+    [self assertFalse:condition message:"expected NO but gut YES"];
 }
+
 - (void)assertFalse:(BOOL)condition message:(CPString)message
 {
     [self assertTrue:(!condition) message:message];
@@ -93,6 +94,7 @@ AssertionFailedError = "AssertionFailedError";
 {
     [self assert:expected equals:actual message:nil];
 }
+
 - (void)assert:(id)expected equals:(id)actual message:(CPString)message
 {
     if (expected !== actual && ![expected isEqual:actual])
@@ -103,6 +105,7 @@ AssertionFailedError = "AssertionFailedError";
 {
     [self assert:expected same:actual message:nil];
 }
+
 - (void)assert:(id)expected same:(id)actual message:(CPString)message
 {
     if (expected !== actual)
@@ -113,6 +116,7 @@ AssertionFailedError = "AssertionFailedError";
 {
     [self assert:expected notSame:actual message:nil];
 }
+
 - (void)assert:(id)expected notSame:(id)actual message:(CPString)message
 {
     if (expected === actual)
@@ -123,6 +127,7 @@ AssertionFailedError = "AssertionFailedError";
 {
     [self assertNull:object message:"expected null but got " + object];
 }
+
 - (void)assertNull:(id)object message:(CPString)message
 {
     [self assertTrue:(object === null) message:message];
@@ -132,6 +137,7 @@ AssertionFailedError = "AssertionFailedError";
 {
     [self assertNotNull:object message:"expected an object but got null"];
 }
+
 - (void)assertNotNull:(id)object message:(CPString)message
 {
     [self assertTrue:(object !== null) message:message];
