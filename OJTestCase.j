@@ -72,7 +72,7 @@ AssertionFailedError = "AssertionFailedError";
 
 - (void)assertTrue:(BOOL)condition
 {
-    [self assertTrue:condition message:nil];
+    [self assertTrue:condition message:"expected YES but got NO"];
 }
 - (void)assertTrue:(BOOL)condition message:(CPString)message
 {
@@ -82,7 +82,7 @@ AssertionFailedError = "AssertionFailedError";
 
 - (void)assertFalse:(BOOL)condition
 {
-    [self assertFalse:condition message:nil];
+    [self assertFalse:condition message:"expecteed NO but gut YES"];
 }
 - (void)assertFalse:(BOOL)condition message:(CPString)message
 {
@@ -121,7 +121,7 @@ AssertionFailedError = "AssertionFailedError";
 
 - (void)assertNull:(id)object
 {
-    [self assertNull:object message:nil];
+    [self assertNull:object message:"expected null but got " + object];
 }
 - (void)assertNull:(id)object message:(CPString)message
 {
@@ -130,7 +130,7 @@ AssertionFailedError = "AssertionFailedError";
 
 - (void)assertNotNull:(id)object
 {
-    [self assertNotNull:object message:nil];
+    [self assertNotNull:object message:"expected an object but got null"];
 }
 - (void)assertNotNull:(id)object message:(CPString)message
 {
