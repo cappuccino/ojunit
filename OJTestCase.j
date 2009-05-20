@@ -82,7 +82,7 @@ AssertionFailedError = "AssertionFailedError";
 
 - (void)assertFalse:(BOOL)condition
 {
-    [self assertFalse:condition message:"expected NO but gut YES"];
+    [self assertFalse:condition message:"expected NO but got YES"];
 }
 
 - (void)assertFalse:(BOOL)condition message:(CPString)message
