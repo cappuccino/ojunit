@@ -143,6 +143,28 @@ AssertionFailedError = "AssertionFailedError";
     [self assertTrue:(object !== null) message:message];
 }
 
+- (void)assertNoThrow:(Function)zeroArgClosure
+{
+    var exception = nil;
+    try { zeroArgClosure(); }
+    catch (e) { exception = e; }
+    [self assertNull:exception message:"Caught unexpected exception " + exception];
+}
+
+- (void)assertThrows:(Function)zeroArgClosure
+{
+    var exception = nil;
+    try { zeroArgClosure(); }
+    catch (e) { exception = e; }
+    [self assertNotNull:exception message:"Should have cought an exception, but got nothing"];
+}
+
+- (void)assert:(CPString)aRegex matches:(CPString)aString
+{
+    [self assertTrue:aString.match(RegExp(aRegex))
+        message:"string '" + aString + "' should be matched by regex /" + aRegex + "/"];
+}
+
 - (void)fail
 {
     [self fail:nil];
