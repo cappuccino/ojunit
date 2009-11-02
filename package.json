@@ -1,0 +1,8 @@
+{
+    "name": "ojunit",
+    "dependencies": ["narwhal", "objective-j"],
+    "author": "Tom Robinson (http://280north.com/)",
+    "contributors": ["Ross Boucher", "Martin Häcker"],
+    "description": "A simple Objective-J unit test framework.",
+    "keywords": ["objective-j", "unit test", "testing", "test"]
+}

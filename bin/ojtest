@@ -1,10 +1,16 @@
+#!/usr/bin/env objj
+
 @import <Foundation/Foundation.j>
 
-@import "OJTestCase.j"
-@import "OJTestSuite.j"
-@import "OJTestResult.j"
+@import "../Framework/OJUnit/OJTestCase.j"
+@import "../Framework/OJUnit/OJTestSuite.j"
+@import "../Framework/OJUnit/OJTestResult.j"
+@import "../Framework/OJUnit/OJTestListenerText.j"
 
-@import "OJTestListenerText.j"
+//@import <OJUnit/OJTestCase.j>
+//@import <OJUnit/OJTestSuite.j>
+//@import <OJUnit/OJTestResult.j>
+//@import <OJUnit/OJTestListenerText.j>
 
 CPLogRegister(CPLogPrint, "warn");
 
