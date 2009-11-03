@@ -2,15 +2,10 @@
 
 @import <Foundation/Foundation.j>
 
-@import "../Framework/OJUnit/OJTestCase.j"
-@import "../Framework/OJUnit/OJTestSuite.j"
-@import "../Framework/OJUnit/OJTestResult.j"
-@import "../Framework/OJUnit/OJTestListenerText.j"
-
-//@import <OJUnit/OJTestCase.j>
-//@import <OJUnit/OJTestSuite.j>
-//@import <OJUnit/OJTestResult.j>
-//@import <OJUnit/OJTestListenerText.j>
+@import <OJUnit/OJTestCase.j>
+@import <OJUnit/OJTestSuite.j>
+@import <OJUnit/OJTestResult.j>
+@import <OJUnit/OJTestListenerText.j>
 
 CPLogRegister(CPLogPrint, "warn");
 
@@ -100,11 +95,11 @@ CPLogRegister(CPLogPrint, "warn");
         return CPLog.info("End of all tests.");
 
     CPLog.fatal("Test suite failed with "+[[_listener errors] count]+" errors and "+[[_listener failures] count]+" failures.");
+    
+    require("OS").exit(1);
 }
 
 @end
-
-print(args);
 
 runner = [[OJTestRunnerText alloc] init];
 [runner startWithArguments:args];

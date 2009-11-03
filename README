@@ -1,11 +1,13 @@
 OJUnit is a simple unit test tool written in and for Objective-J. It's based on the xUnit design.
 
-For now, simply call the text based test runner using the "ojunit" interpreter. For example, you could test Date using the following
+Use the "ojtest" command line tool to run tests. For example, you can test CPDate in Cappuccino using the following:
 
-	ojunit cappuccino/Tests/Foundation/CPDateTest.j
+    ojtest cappuccino/Tests/Foundation/CPDateTest.j
 
-or
+To run all tests in a directory (test-directory in this case):
 
-  ojunit *Test.j
+    ojtest test-directory/*Test.j
 
-to get all tests in the current directory.
+Or to run all tests in a tree:
+
+    find test-directory -name "*Test.j" | xargs ojtest
