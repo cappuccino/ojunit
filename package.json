@@ -2,7 +2,7 @@
     "name": "ojunit",
     "dependencies": ["narwhal", "objective-j", "cappuccino"],
     "author": "Tom Robinson (http://280north.com/)",
-    "contributors": ["Ross Boucher", "Martin Häcker"],
+    "contributors": ["Ross Boucher", "Martin Hacker"],
     "description": "A simple Objective-J unit test framework.",
     "keywords": ["objective-j", "unit test", "testing", "test"],
     "objj-frameworks": ["Framework"]
