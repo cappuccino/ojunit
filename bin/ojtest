@@ -96,7 +96,7 @@ CPLogRegister(CPLogPrint, "warn");
 
     CPLog.fatal("Test suite failed with "+[[_listener errors] count]+" errors and "+[[_listener failures] count]+" failures.");
     
-    require("OS").exit(1);
+    require("os").exit(1);
 }
 
 @end
