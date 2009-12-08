@@ -101,5 +101,7 @@ CPLogRegister(CPLogPrint, "warn");
 
 @end
 
-runner = [[OJTestRunnerText alloc] init];
-[runner startWithArguments:args];
+function main(args) {
+    runner = [[OJTestRunnerText alloc] init];
+    [runner startWithArguments:args.slice(1)];
+}
