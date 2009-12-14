@@ -101,6 +101,17 @@ AssertionFailedError = "AssertionFailedError";
         [self failNotEqual:expected actual:actual message:message];
 }
 
+- (void)assert:(id)expected notEqual:(id)actual
+{
+    [self assert:expected notEqual:actual message:nil];
+}
+
+- (void)assert:(id)expected notEqual:(id)actual message:(CPString)message
+{
+    if (expected === actual || [expected isEqual:actual])
+        [self failEqual:expected actual:actual message:message];
+}
+
 - (void)assert:(id)expected same:(id)actual
 {
     [self assert:expected same:actual message:nil];
@@ -183,6 +194,11 @@ AssertionFailedError = "AssertionFailedError";
 - (void)failNotSame:(id)expected actual:(id)actual message:(CPString)message
 {
     [self fail:((message ? message+" " : "")+"expected same:<"+expected+"> was not:<"+actual+">")];
+}
+
+- (void)failEqual:(id)expected actual:(id)actual message:(CPString)message
+{
+    [self fail:((message ? message+" " : "")+"expected inequality. Expected:<"+expected+"> Got:<"+actual+">")];
 }
 
 - (void)failNotEqual:(id)expected actual:(id)actual message:(CPString)message
