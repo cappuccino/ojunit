@@ -104,6 +104,7 @@ CPLogRegister(CPLogPrint, "warn");
 @end
 
 function main(args) {
+    //objj_msgSend_decorate(objj_typecheck_decorator);
     runner = [[OJTestRunnerText alloc] init];
     [runner startWithArguments:args.slice(1)];
 }

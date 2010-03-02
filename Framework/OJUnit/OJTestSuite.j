@@ -88,11 +88,11 @@
     {
         test = [aClass performSelector:initSelector withObject:selector];
     }
-        
+
     return test;
 }
 
-- (void)isTestMethod:(SEL)selector
+- (BOOL)isTestMethod:(SEL)selector
 {
     return selector.substring(0,4) == "test" && selector.indexOf(":") == -1;
 }
