@@ -3,7 +3,7 @@
 function convertRhinoBacktrace(javaException) {
     var s = new Packages.java.io.StringWriter();
     javaException.printStackTrace(new Packages.java.io.PrintWriter(s));
-    return String(s.toString()).split("\n").filter(function(s) { return (/^\s*at org.mozilla.javascript.gen.file/).test(s); }).join("\n");
+    return String(s.toString()).split("\n").filter(function(s) { return (/^\s*at (script|org\.mozilla\.javascript\.gen\.file)/).test(s); }).join("\n");
 }
 
 function getBacktrace(e) {
